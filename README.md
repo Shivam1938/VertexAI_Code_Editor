@@ -39,7 +39,7 @@ VertexAI_Code_Editor/
 # Development
 
 The project uses feature branches and Pull Requests for development.
-```
+```text
 main
 ├── feature/auth
 ├── feature/redis-in-docker
