@@ -34,14 +34,17 @@ VertexAI_Code_Editor/
 │
 ├── Frontend/
 └── README.md
-Development
+```
+
+# Development
 
 The project uses feature branches and Pull Requests for development.
-
+```
 main
 ├── feature/auth
 ├── feature/redis-in-docker
 └── feature/logout
+```
 
 Each feature is developed separately, reviewed, and then merged into main.
 
