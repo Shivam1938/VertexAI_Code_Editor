@@ -1,33 +1,53 @@
-# VertexAI
+# VertexAI Code Editor
 
-VertexAI is an AI-powered web-based code editor designed to provide a modern development environment directly in the browser.
-
-The project follows a **microservices-based architecture**, with an API Gateway handling communication between the frontend and backend services.
-
-## Tech Stack
-
-- React + Vite
-- Node.js + Express
-- MongoDB + Mongoose
-- Firebase Authentication
-- API Gateway
-- Microservices Architecture
-- GitHub / Git
+A full-stack code editor project built with a modular backend architecture.
 
 ## Current Features
 
 - Google Authentication
-- User management with MongoDB
-- API Gateway
-- Authentication microservice
-- Responsive code editor interface
+- Session management using Redis
+- Redis integrated with Docker
+- Logout functionality
+- Modular backend structure with services and shared utilities
+
+## Tech Stack
+
+- Node.js
+- Express.js
+- JavaScript
+- Redis
+- Docker & Docker Compose
+- Google OAuth
+- Git & GitHub
 
 ## Project Structure
 
 ```text
-VertexAI/
+VertexAI_Code_Editor/
+├── Backend/
+│   ├── gateway/
+│   ├── services/
+│   │   └── auth/
+│   ├── shared/
+│   │   └── redis/
+│   └── docker-compose.yml
+│
 ├── Frontend/
-└── Backend/
-    ├── gateway/
-    └── services/
-        └── auth/
+└── README.md
+```
+
+# Development
+
+The project uses feature branches and Pull Requests for development.
+```text
+main
+├── feature/auth
+├── feature/redis-in-docker
+└── feature/logout
+```
+
+Each feature is developed separately, reviewed, and then merged into main.
+
+Status
+
+🚧 Under Development
