@@ -28,7 +28,7 @@ export const login = async (req, res) => {
 
     // Store the session ID and user information in Redis with an expiration time (e.g., 7 days)
     await redis.set(
-      `sessionId-${sessionId}`,
+      `session-${sessionId}`,
       JSON.stringify({
         name: user.name,
         userId: user._id,
@@ -49,7 +49,7 @@ export const login = async (req, res) => {
       maxAge: 1000 * 60 * 60 * 24 * 7,
     });
 
-    return res.json({
+    return res.status(200).json({
       message: "Login successful",
       user,
     });
@@ -60,3 +60,24 @@ export const login = async (req, res) => {
     });
   }
 };
+
+
+export const logout = async (req, res) => {
+  try {
+    
+    const sessionId = req.cookies?.session
+    await redis.del(`session-${sessionId}`)
+    res.clearCookie("session")
+
+    return res.status(200).json({
+      message: "Logout successful",
+    });
+    
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message:"Logout Error"
+    })
+  }
+
+}
